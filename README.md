@@ -63,19 +63,78 @@ Nine UI screens with real confirmation flows, a pooled audio system that never i
 
 ---
 
-## Toolkit
+## Tech Arsenal
 
-|  |  |
-| :--- | :--- |
-| **Languages** | Python · C++ · C · Java · C# · JavaScript · SQL |
-| **ML & Deep Learning** | PyTorch · TensorFlow · Keras · scikit-learn · XGBoost · YOLOv8 · OpenCV |
-| **NLP & GenAI** | Hugging Face Transformers · BERT / SBERT · FAISS · RAG · LLM integration |
-| **Explainability** | SHAP · LIME · Integrated Gradients · Captum |
-| **Backend & APIs** | Flask · FastAPI · Streamlit · Pydantic · REST · Jinja2 |
-| **Frontend & Design** | HTML5 · CSS3 · JavaScript · Plotly · Responsive UI · Figma |
-| **Cloud & DevOps** | AWS (EC2, S3, IAM, Lambda, EventBridge, CloudWatch, SNS) · Boto3 · Docker · Kubernetes · Nginx · GitHub Actions |
-| **Data** | pandas · NumPy · MongoDB · SQL |
-| **Game Development** | Unity 2022 LTS · Cinemachine · Unity Input System |
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+**ML & Deep Learning**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-337AB7?style=for-the-badge&logo=xgboost&logoColor=white)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-00FFFF?style=for-the-badge&logo=yolo&logoColor=black)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+
+**NLP & GenAI**
+
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFAF00?style=for-the-badge&logo=huggingface&logoColor=white)
+![BERT](https://img.shields.io/badge/BERT%20%2F%20SBERT-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge&logo=meta&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-6E48AA?style=for-the-badge&logo=openai&logoColor=white)
+![LLM](https://img.shields.io/badge/LLM%20Integration-10A37F?style=for-the-badge&logo=openai&logoColor=white)
+
+**Explainability**
+
+![SHAP](https://img.shields.io/badge/SHAP-FF6B6B?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![LIME](https://img.shields.io/badge/LIME-00C853?style=for-the-badge&logo=limesurvey&logoColor=white)
+![Captum](https://img.shields.io/badge/Captum-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Integrated Gradients](https://img.shields.io/badge/Integrated%20Gradients-7B61FF?style=for-the-badge&logo=tensorflow&logoColor=white)
+
+**Backend & APIs**
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
+![REST](https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+**Frontend & Design**
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+**Cloud & DevOps**
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Boto3](https://img.shields.io/badge/Boto3-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+
+**Data**
+
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+
+**Game Development**
+
+![Unity](https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=black)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Cinemachine](https://img.shields.io/badge/Cinemachine-000000?style=for-the-badge&logo=unity&logoColor=white)
 
 ---
 
