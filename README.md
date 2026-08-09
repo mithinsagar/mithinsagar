@@ -1,176 +1,179 @@
----
-license: mit
-language:
-  - en
-library_name: sentence-transformers
-base_model: sentence-transformers/all-mpnet-base-v2
-pipeline_tag: sentence-similarity
-tags:
-  - resume
-  - resume-screening
-  - explainable-ai
-  - xai
-  - shapley
-  - lime
-  - sentence-transformers
-  - embeddings
-  - skill-ontology
-datasets:
-  - mithinsagar/exai-resumeintel-data
+<p align="center">
+  <img src="assets/banner.svg" alt="Mithin Sagar — AI &amp; Machine Learning · Software Engineering · Interface Design" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/mithinsagar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://huggingface.co/mithinsagar"><img src="https://img.shields.io/badge/Hugging%20Face-FFAF00?style=flat-square&logo=huggingface&logoColor=white" alt="Hugging Face"></a>
+  <a href="mailto:mithinsagar@gmail.com"><img src="https://img.shields.io/badge/Email-1F2937?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
+  <img src="https://img.shields.io/badge/Chennai,%20India-334155?style=flat-square&logo=googlemaps&logoColor=white" alt="Chennai, India">
+</p>
+
 ---
 
-# EXAI-ResumeIntel Model Artifacts
+I build machine learning systems that can explain themselves — and the interfaces that make those explanations useful to someone who isn't an ML engineer.
 
-Precomputed model artifacts for **EXAI-ResumeIntel**, an explainable artificial intelligence framework for automated resume analysis using Shapley values, LIME, and a hierarchical domain skill ontology.
+I'm a Computer Science undergrad at **VIT Chennai** (AI & ML specialisation, class of 2027). I spent a summer at the **Indira Gandhi Centre for Atomic Research** replacing a manual industrial weld-inspection workflow with an end-to-end YOLOv8 pipeline, and I've presented a paper on automated AWS cost and security cleanup at **ICANDIT 2026**.
 
-**Author:** Mithin Sagar S · [github.com/mithinsagar](https://github.com/mithinsagar)
-**Institution:** Vellore Institute of Technology (VIT), Vellore, Tamil Nadu, India
-**Code repository:** [github.com/mithinsagar/EXAI-ResumeIntel](https://github.com/mithinsagar/EXAI-ResumeIntel)
-**Companion datasets:** [mithinsagar/exai-resumeintel-data](https://huggingface.co/datasets/mithinsagar/exai-resumeintel-data)
+The through-line across everything below is the same, whether it's a research notebook or a game engine: a system nobody can inspect is a system nobody should trust. So my projects ship with the model *and* the dashboard, the metric *and* the interface, the paper *and* the CI pipeline.
 
-## Overview
+---
 
-This repository hosts the large binary artifacts required to run EXAI-ResumeIntel without recomputing embeddings from scratch. Encoding over one million job postings with a transformer model is expensive; these files let anyone clone the code repository and have a working system in minutes.
+## Selected work
 
-## Files
+### [EXAI-ResumeIntel](https://github.com/mithinsagar/EXAI-ResumeIntel) &nbsp;·&nbsp; Explainable resume-to-role matching
 
-| File | Size | Description |
-|:---|---:|:---|
-| `job_df.pkl` | 1.12 GB | Pickled pandas DataFrame of job postings with a `Role` column |
-| `job_embeddings.memmap` | 4.96 GB | Memory-mapped float32 SBERT embedding matrix aligned row-wise with `job_df.pkl` |
+Most ATS tools hand you a score. This one hands you the reasoning — Shapley values, LIME, counterfactuals and attention heatmaps that name the exact skills that earned the score, and price out what adding the missing ones would be worth. Built on a 22-skill / 346-alias ontology and SBERT embeddings over **1M+ job postings** and **2,484 real resumes**, with the Shapley and LIME implementations written from first principles rather than imported. The 6 GB of model artifacts stream from memory-mapped arrays, which is what makes it deployable at all.
 
-## Artifact Details
+Deployed live and usable in a browser.
 
-### `job_df.pkl`
+`FastAPI` `Streamlit` `sentence-transformers` `scikit-learn` `Plotly` `Docker` `Kubernetes` `Nginx`
 
-A pickled `pandas.DataFrame` containing the job postings corpus. The `Role` column is used for exact and fuzzy role lookup during matching. Row order is significant: row *i* of this DataFrame corresponds to row *i* of the embedding matrix.
+[Live demo](https://huggingface.co/spaces/mithinsagar/exai-resumeintel) &nbsp;·&nbsp; [Datasets](https://huggingface.co/datasets/mithinsagar/exai-resumeintel-data) &nbsp;·&nbsp; [Models](https://huggingface.co/mithinsagar/exai-resumeintel-models)
 
-### `job_embeddings.memmap`
+### [xai-attack-defense-framework](https://github.com/mithinsagar/xai-attack-defense-framework) &nbsp;·&nbsp; Can you make an explanation lie?
 
-A raw `float32` array of shape `(n_jobs, 768)` written in C order, containing sentence embeddings produced by `sentence-transformers/all-mpnet-base-v2`. Stored as a memory-map so that similarity search can stream over the corpus in chunks without loading roughly 5 GB into RAM.
+An adversarial robustness study of post-hoc explainability: can an attacker leave a security model's *prediction* untouched while corrupting the explanation the analyst reads? Across **235,795 phishing URLs**, an intrusion-detection set and a fraud corpus, four attacks against SHAP, LIME and Integrated Gradients say yes. Four defenses follow — the hybrid one cuts mean explanation drift by **91.1%** while holding classification performance. A few-shot analysis shows the problem gets 40–100% worse in the low-data regime, which is exactly where security teams operate.
 
-Shape is inferred at load time from the file size and the DataFrame row count, falling back to a dimensionality of 768 when the division is not exact.
+`PyTorch` `SHAP` `LIME` `Captum` `XGBoost` `scikit-learn` `pytest`
 
-## Usage
+### [mediXplain-disease-prediction](https://github.com/mithinsagar/mediXplain-disease-prediction) &nbsp;·&nbsp; Diagnosis you can audit
 
-### Download
+Symptom-to-diagnosis prediction across **41 conditions** and **133 symptoms**, wrapped in explainability at every layer: calibrated confidence, a ranked differential, a FAISS-retrieved evidence paragraph, and an optional LLM explanation in plain English. Seven classifiers benchmarked under 5-fold CV. If FAISS or a GPU isn't available it degrades gracefully to TF-IDF retrieval, so it runs on any laptop — and the LLM layer is optional by design, never load-bearing.
 
-```bash
-hf download mithinsagar/exai-resumeintel-models \
-  --repo-type model --local-dir models
-```
+The front end is a dark-themed responsive Flask UI with live symptom search, chip selection and an animated confidence bar. No build step, no bundler.
 
-### Load both artifacts
+`Flask` `scikit-learn` `FAISS` `sentence-transformers` `Jinja2` `Vanilla JS` `pytest` `GitHub Actions`
 
-```python
-import numpy as np
-import pandas as pd
-from huggingface_hub import hf_hub_download
+### [aws-ai-resource-cleanup](https://github.com/mithinsagar/aws-ai-resource-cleanup) &nbsp;·&nbsp; Cloud hygiene, automated
 
-df_path = hf_hub_download(
-    repo_id="mithinsagar/exai-resumeintel-models",
-    filename="job_df.pkl",
-)
-mm_path = hf_hub_download(
-    repo_id="mithinsagar/exai-resumeintel-models",
-    filename="job_embeddings.memmap",
-)
+Cloud accounts accumulate ghosts: forgotten EC2 instances, orphaned EBS snapshots, stale IAM users, security groups nobody remembers opening. This scans **seven AWS resource domains**, pulls real CloudWatch utilisation, and runs a Random Forest over engineered idle-signal features to recommend *keep / review / delete* with a confidence score — falling back to a rule engine when no model is present.
 
-job_df = pd.read_pickle(df_path)
-n_rows = len(job_df)
-dim = 768
+Deletion is treated as the dangerous operation it is: dry-run by default, protected tags honoured, hardcoded exclusions, pre-deletion verification and a timestamped audit log. Ships with a Flask dashboard, PDF and CSV audit reports, and Lambda + EventBridge scheduling. The research behind it was presented at ICANDIT 2026.
 
-job_embeddings = np.memmap(
-    mm_path, dtype=np.float32, mode="r", shape=(n_rows, dim), order="C"
-)
+`Boto3` `scikit-learn` `Flask` `ReportLab` `AWS Lambda` `EventBridge` `SNS` `unittest.mock`
 
-print(f"{n_rows:,} job postings, {dim}-dimensional embeddings")
-```
+### [StriderRunner-UnityGame](https://github.com/mithinsagar/StriderRunner-UnityGame) &nbsp;·&nbsp; A finished game, written like a library
 
-### Chunked similarity search
+Seven hand-built levels, nine movement abilities, fourteen trap behaviours, two enemy types — deliberately written as a clean reference codebase rather than a jam prototype. **47 C# files** across a four-layer architecture (input, simulation, presentation, persistence), where every playable character is a ScriptableObject, so adding one touches zero lines of code.
 
-```python
-from sentence_transformers import SentenceTransformer
+Nine UI screens with real confirmation flows, a pooled audio system that never instantiates an AudioSource at runtime, and a Unity CI pipeline that runs edit-mode and play-mode tests and produces Windows and WebGL artifacts on every push. Validated across six build targets.
 
-model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
-resume_vec = model.encode([resume_text], convert_to_numpy=True)[0]
+`Unity 2022 LTS` `C#` `Cinemachine` `Unity Input System` `TextMesh Pro` `GitHub Actions` `Git LFS`
 
-def chunked_cosine(query, matrix, chunk_size=1024):
-    sims = np.empty(matrix.shape[0], dtype=np.float32)
-    q_norm = np.linalg.norm(query) + 1e-8
-    for start in range(0, matrix.shape[0], chunk_size):
-        end = min(start + chunk_size, matrix.shape[0])
-        batch = np.array(matrix[start:end], copy=False)
-        sims[start:end] = (batch @ query) / (
-            np.linalg.norm(batch, axis=1) * q_norm + 1e-8
-        )
-    return sims
+---
 
-similarities = chunked_cosine(resume_vec, job_embeddings)
-```
+## Tech Arsenal
 
-### Use inside the reference implementation
+**Languages**
 
-```bash
-git clone https://github.com/mithinsagar/EXAI-ResumeIntel.git
-cd EXAI-ResumeIntel
-pip install -r requirements.txt
-bash scripts/download_data.sh    # fetches this repo and the dataset repo
-streamlit run app/main.py
-```
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-## Base Model
+**ML & Deep Learning**
 
-Embeddings were produced with [`sentence-transformers/all-mpnet-base-v2`](https://huggingface.co/sentence-transformers/all-mpnet-base-v2), a 768-dimensional sentence encoder. No fine-tuning was applied; these are frozen inference-time embeddings of the job posting corpus.
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-337AB7?style=for-the-badge&logo=xgboost&logoColor=white)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-00FFFF?style=for-the-badge&logo=yolo&logoColor=black)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 
-Note that the EXAI research pipeline described in the accompanying paper uses a separate, from-scratch TF-IDF plus Truncated SVD engine (150 dimensions, 27.8% explained variance) rather than SBERT. The SBERT artifacts here power the interactive application layer, which performs large-scale semantic retrieval across the full job corpus. Both paths are documented in the code repository.
+**NLP & GenAI**
 
-## Regenerating These Artifacts
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFAF00?style=for-the-badge&logo=huggingface&logoColor=white)
+![BERT](https://img.shields.io/badge/BERT%20%2F%20SBERT-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge&logo=meta&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-6E48AA?style=for-the-badge&logo=openai&logoColor=white)
+![LLM](https://img.shields.io/badge/LLM%20Integration-10A37F?style=for-the-badge&logo=openai&logoColor=white)
 
-```python
-from sentence_transformers import SentenceTransformer
-import numpy as np, pandas as pd
+**Explainability**
 
-df = pd.read_csv("data/raw/jobs_dataset_with_features.csv")
-model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+![SHAP](https://img.shields.io/badge/SHAP-FF6B6B?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![LIME](https://img.shields.io/badge/LIME-00C853?style=for-the-badge&logo=limesurvey&logoColor=white)
+![Captum](https://img.shields.io/badge/Captum-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Integrated Gradients](https://img.shields.io/badge/Integrated%20Gradients-7B61FF?style=for-the-badge&logo=tensorflow&logoColor=white)
 
-embeddings = model.encode(
-    df["Features"].fillna("").tolist(),
-    batch_size=64,
-    convert_to_numpy=True,
-    show_progress_bar=True,
-).astype(np.float32)
+**Backend & APIs**
 
-embeddings.tofile("models/job_embeddings.memmap")
-df.to_pickle("models/job_df.pkl")
-```
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
+![REST](https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-This takes several hours on GPU and considerably longer on CPU, which is why the precomputed artifacts are published here.
+**Frontend & Design**
 
-## Intended Use
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
-These artifacts support reproducible research in explainable resume screening and semantic job matching. They are intended for research, education, and demonstration.
+**Cloud & DevOps**
 
-## Limitations and Ethical Considerations
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Boto3](https://img.shields.io/badge/Boto3-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 
-Embeddings inherit the semantic biases of both the underlying `all-mpnet-base-v2` model and the job posting corpus. Similarity scores between a resume and a role reflect linguistic proximity, not candidate suitability, and must not be treated as a hiring decision.
+**Data**
 
-Any real-world deployment should include bias auditing across protected attributes, mandatory human review of adverse outcomes, and compliance with applicable employment and algorithmic transparency law. The EXAI framework provides Shapley, LIME, and counterfactual explanations precisely so that these decisions remain auditable.
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## Citation
+**Game Development**
 
-```bibtex
-@software{sagar2026exai,
-  author    = {Mithin Sagar S},
-  title     = {{EXAI-ResumeIntel: An Explainable Artificial Intelligence
-               Framework for Automated Resume Analysis Using Shapley
-               Values, LIME, and Domain Skill Ontology}},
-  year      = {2026},
-  publisher = {GitHub},
-  url       = {https://github.com/mithinsagar/EXAI-ResumeIntel}
-}
-```
+![Unity](https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=black)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Cinemachine](https://img.shields.io/badge/Cinemachine-000000?style=for-the-badge&logo=unity&logoColor=white)
 
-## License
+---
 
-MIT
+## How I build
+
+Every repository above follows the same discipline, and I think it's the more interesting half of the work. Packages, not scripts — modules with clear boundaries you can swap or test in isolation. Configuration in YAML with typed dataclasses, not constants buried three files deep. Test suites that run without cloud credentials, a GPU, or a 6 GB download, because a test nobody can run is documentation at best. GitHub Actions on every push. Architecture docs written for someone who isn't me.
+
+And sensible failure modes throughout: the RAG layer falls back to TF-IDF, the recommender falls back to rules, the explanation layer falls back to a template — and the tool that deletes cloud infrastructure won't do it unless you ask twice.
+
+---
+
+## Recognition
+
+- **Winner — Hack The Gap**, VIT Chennai (2025). Full-stack platform connecting underserved students to mentors and learning resources; recognised for solution design and practical impact.
+- **First Runner-Up — Figma × Apple Vision Pro Design Challenge**, GDSC VIT Chennai (2023). Spatial-computing UI prototype.
+- **Paper presented — ICANDIT 2026**, INTI International University, Malaysia. *Automated AWS Resource Cleanup for Optimization of Cost and Security.*
+- **Outreach Head — TechnoVIT & Vibrance** (2024–25). Led a 25-member team across two flagship university festivals.
+- **Certifications** — Google UX Design Professional Certificate · Introduction to Generative AI, Google Cloud (100%) · Python Data Structures, University of Michigan (97.6%)
+
+---
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mithinsagar&layout=compact&langs_count=8&hide=jupyter%20notebook&hide_border=true&bg_color=00000000&title_color=58A6FF&text_color=8B949E" alt="Top languages" align="right" height="150">
+
+### Elsewhere
+
+Away from the keyboard I shoot photography and play badminton. The photography is where most of my design instinct comes from — framing, hierarchy, and knowing what to leave out of the frame turn out to be the same problem as designing an interface.
+
+**Open to SDE and AI/ML roles.** The fastest way to reach me is [email](mailto:mithinsagar@gmail.com) or [LinkedIn](https://www.linkedin.com/in/mithinsagar).
+
+<br clear="right">
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mithinsagar/mithinsagar/output/snake-dark.svg" alt="Contribution Snake" />
+</p>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mithinsagar/mithinsagar/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" width="100%" />
+</p>
