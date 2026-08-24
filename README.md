@@ -21,6 +21,14 @@ The through-line across everything below is the same, whether it's a research no
 
 ## Selected work
 
+### [Society Maintenance Tracker](https://github.com/mithinsagar/society-maintenance-tracker) &nbsp;·&nbsp; Complaint lifecycle and audit trail for residential societies
+
+A full-stack platform where residents raise maintenance complaints with photos and track them to resolution, while the management committee triages through a strict OPEN → IN PROGRESS → RESOLVED workflow with priorities, configurable overdue detection and a permanent, append-only audit trail — enforced at the database level, not just in application code.
+
+`Next.js 16` `TypeScript` `PostgreSQL` `Drizzle ORM` `Tailwind CSS` `Radix UI` `Vitest`
+
+[Live demo](https://society-maintenance-tracker-two-omega.vercel.app) &nbsp;·&nbsp; [Source](https://github.com/mithinsagar/society-maintenance-tracker)
+
 ### [EXAI-ResumeIntel](https://github.com/mithinsagar/EXAI-ResumeIntel) &nbsp;·&nbsp; Explainable resume-to-role matching
 
 Most ATS tools hand you a score. This one hands you the reasoning — Shapley values, LIME, counterfactuals and attention heatmaps that name the exact skills that earned the score, and price out what adding the missing ones would be worth. Built on a 22-skill / 346-alias ontology and SBERT embeddings over **1M+ job postings** and **2,484 real resumes**, with the Shapley and LIME implementations written from first principles rather than imported. The 6 GB of model artifacts stream from memory-mapped arrays, which is what makes it deployable at all.
@@ -177,4 +185,3 @@ Away from the keyboard I shoot photography and play badminton. The photography i
 <p align="center">
   <img src="https://raw.githubusercontent.com/mithinsagar/mithinsagar/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" width="100%" />
 </p>
-
