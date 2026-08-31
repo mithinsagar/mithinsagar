@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Chennai,%20India-0A0F1D?style=flat-square&logo=googlemaps&logoColor=34A853" alt="Chennai, India">
 </p>
 
-I build machine learning systems that can explain themselves and the interfaces that make those explanations useful to someone who isn't an ML engineer.
+I build machine learning systems that can explain themselves — and the interfaces that make those explanations useful to someone who isn't an ML engineer.
 
 Computer Science undergrad at **VIT Chennai** (AI & ML, class of 2027). I spent a summer at the **Indira Gandhi Centre for Atomic Research** replacing a manual industrial weld-inspection workflow with an end-to-end YOLOv8 pipeline, and presented a paper on automated AWS cost and security cleanup at **ICANDIT 2026**.
 
@@ -79,60 +79,7 @@ Seven hand-built levels, nine movement abilities, fourteen trap behaviours — d
 
 ## Toolkit
 
-**Languages**<br>
-![Python](https://img.shields.io/badge/Python-0A0F1D?style=flat-square&logo=python&logoColor=3776AB)
-![C++](https://img.shields.io/badge/C%2B%2B-0A0F1D?style=flat-square&logo=cplusplus&logoColor=00599C)
-![C](https://img.shields.io/badge/C-0A0F1D?style=flat-square&logo=c&logoColor=A8B9CC)
-![Java](https://img.shields.io/badge/Java-0A0F1D?style=flat-square&logo=openjdk&logoColor=ED8B00)
-![C#](https://img.shields.io/badge/C%23-0A0F1D?style=flat-square&logo=csharp&logoColor=239120)
-![TypeScript](https://img.shields.io/badge/TypeScript-0A0F1D?style=flat-square&logo=typescript&logoColor=3178C6)
-![JavaScript](https://img.shields.io/badge/JavaScript-0A0F1D?style=flat-square&logo=javascript&logoColor=F7DF1E)
-![SQL](https://img.shields.io/badge/SQL-0A0F1D?style=flat-square&logo=postgresql&logoColor=4479A1)
-
-**Machine learning & explainability**<br>
-![PyTorch](https://img.shields.io/badge/PyTorch-0A0F1D?style=flat-square&logo=pytorch&logoColor=EE4C2C)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-0A0F1D?style=flat-square&logo=tensorflow&logoColor=FF6F00)
-![Keras](https://img.shields.io/badge/Keras-0A0F1D?style=flat-square&logo=keras&logoColor=D00000)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-0A0F1D?style=flat-square&logo=scikitlearn&logoColor=F7931E)
-![XGBoost](https://img.shields.io/badge/XGBoost-0A0F1D?style=flat-square&logo=xgboost&logoColor=337AB7)
-![OpenCV](https://img.shields.io/badge/OpenCV-0A0F1D?style=flat-square&logo=opencv&logoColor=5C3EE8)
-![YOLOv8](https://img.shields.io/badge/YOLOv8-0A0F1D?style=flat-square&logo=yolo&logoColor=00FFFF)
-![SHAP](https://img.shields.io/badge/SHAP-0A0F1D?style=flat-square&logo=chartdotjs&logoColor=FF6B6B)
-![LIME](https://img.shields.io/badge/LIME-0A0F1D?style=flat-square&logo=limesurvey&logoColor=00C853)
-![Captum](https://img.shields.io/badge/Captum-0A0F1D?style=flat-square&logo=pytorch&logoColor=EE4C2C)
-
-**Retrieval, NLP & agents**<br>
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-0A0F1D?style=flat-square&logo=huggingface&logoColor=FFD21E)
-![SBERT](https://img.shields.io/badge/BERT%20%2F%20SBERT-0A0F1D?style=flat-square&logo=google&logoColor=4285F4)
-![FAISS](https://img.shields.io/badge/FAISS-0A0F1D?style=flat-square&logo=meta&logoColor=0467DF)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-0A0F1D?style=flat-square)
-![LangGraph](https://img.shields.io/badge/LangGraph-0A0F1D?style=flat-square&logo=langchain&logoColor=1C6E64)
-
-**Backend & data**<br>
-![FastAPI](https://img.shields.io/badge/FastAPI-0A0F1D?style=flat-square&logo=fastapi&logoColor=009688)
-![Flask](https://img.shields.io/badge/Flask-0A0F1D?style=flat-square&logo=flask&logoColor=FFFFFF)
-![Streamlit](https://img.shields.io/badge/Streamlit-0A0F1D?style=flat-square&logo=streamlit&logoColor=FF4B4B)
-![Pydantic](https://img.shields.io/badge/Pydantic-0A0F1D?style=flat-square&logo=pydantic&logoColor=E92063)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0A0F1D?style=flat-square&logo=postgresql&logoColor=4169E1)
-![MongoDB](https://img.shields.io/badge/MongoDB-0A0F1D?style=flat-square&logo=mongodb&logoColor=47A248)
-![pandas](https://img.shields.io/badge/pandas-0A0F1D?style=flat-square&logo=pandas&logoColor=8A5CF6)
-![NumPy](https://img.shields.io/badge/NumPy-0A0F1D?style=flat-square&logo=numpy&logoColor=4DABCF)
-
-**Frontend & design**<br>
-![Next.js](https://img.shields.io/badge/Next.js-0A0F1D?style=flat-square&logo=nextdotjs&logoColor=FFFFFF)
-![React](https://img.shields.io/badge/React-0A0F1D?style=flat-square&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-0A0F1D?style=flat-square&logo=tailwindcss&logoColor=06B6D4)
-![Plotly](https://img.shields.io/badge/Plotly-0A0F1D?style=flat-square&logo=plotly&logoColor=636EFA)
-![Figma](https://img.shields.io/badge/Figma-0A0F1D?style=flat-square&logo=figma&logoColor=F24E1E)
-
-**Cloud, DevOps & tooling**<br>
-![AWS](https://img.shields.io/badge/AWS-0A0F1D?style=flat-square&logo=amazonwebservices&logoColor=FF9900)
-![Docker](https://img.shields.io/badge/Docker-0A0F1D?style=flat-square&logo=docker&logoColor=2496ED)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-0A0F1D?style=flat-square&logo=kubernetes&logoColor=326CE5)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-0A0F1D?style=flat-square&logo=githubactions&logoColor=2088FF)
-![Nginx](https://img.shields.io/badge/Nginx-0A0F1D?style=flat-square&logo=nginx&logoColor=009639)
-![Vercel](https://img.shields.io/badge/Vercel-0A0F1D?style=flat-square&logo=vercel&logoColor=FFFFFF)
-![Unity](https://img.shields.io/badge/Unity-0A0F1D?style=flat-square&logo=unity&logoColor=FFFFFF)
+<img src="assets/toolkit.svg" alt="Toolkit, drawn as a stack: languages at the foundation, then models and explainability, retrieval, service and data, interface, and the infrastructure it runs on — 42 tools across six layers" width="100%">
 
 ---
 
