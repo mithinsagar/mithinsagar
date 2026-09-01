@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Chennai,%20India-0A0F1D?style=flat-square&logo=googlemaps&logoColor=34A853" alt="Chennai, India">
 </p>
 
-I build machine learning systems that can explain themselves — and the interfaces that make those explanations useful to someone who isn't an ML engineer.
+I build machine learning systems that can explain themselves and the interfaces that make those explanations useful to someone who isn't an ML engineer.
 
 Computer Science undergrad at **VIT Chennai** (AI & ML, class of 2027). I spent a summer at the **Indira Gandhi Centre for Atomic Research** replacing a manual industrial weld-inspection workflow with an end-to-end YOLOv8 pipeline, and presented a paper on automated AWS cost and security cleanup at **ICANDIT 2026**.
 
