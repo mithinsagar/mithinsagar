@@ -18,9 +18,6 @@ The through-line, whether it's a research notebook or a game engine: a system no
 ---
 
 ## Selected work
-
-Five projects, picked for range rather than a single theme: adversarial ML research, two live explainable-AI products, a production full-stack app and a finished game.
-
 #### [xai-attack-defense-framework](https://github.com/mithinsagar/xai-attack-defense-framework) · can you make an explanation lie?
 
 An adversarial study of post-hoc explainability: can an attacker leave a security model's *prediction* untouched while corrupting the explanation the analyst reads? Across **235,795 phishing URLs**, an intrusion-detection set and a fraud corpus, four attacks on SHAP, LIME and Integrated Gradients say yes. Of the four defenses that follow, the hybrid one cuts mean explanation drift by **91.1%** while holding classification performance.
