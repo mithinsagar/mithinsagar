@@ -4,8 +4,10 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/mithinsagar"><img src="https://img.shields.io/badge/LinkedIn-0A0F1D?style=flat-square&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"></a>
+  <a href="https://huggingface.co/mithinsagar"><img src="https://img.shields.io/badge/Hugging%20Face-0A0F1D?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Hugging Face"></a>
   <a href="mailto:mithinsagar@gmail.com"><img src="https://img.shields.io/badge/Email-0A0F1D?style=flat-square&logo=gmail&logoColor=EA4335" alt="Email"></a>
   <a href="assets/resume.pdf"><img src="https://img.shields.io/badge/Resume-0A0F1D?style=flat-square&logo=adobeacrobatreader&logoColor=FF0000" alt="Resume"></a>
+  <img src="https://img.shields.io/badge/Chennai,%20India-0A0F1D?style=flat-square&logo=googlemaps&logoColor=34A853" alt="Chennai, India">
 </p>
 
 I build machine learning systems that can explain themselves, and the interfaces that make those explanations useful to someone who isn't an ML engineer.
