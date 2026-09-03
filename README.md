@@ -19,14 +19,6 @@ The through-line, whether it's a research notebook or a game engine: a system no
 ---
 
 ## Selected work
-#### [Signal](https://github.com/mithinsagar/signal-resume-match) · most tools hand you a score, this one shows its work
-
-Drop in a resume and a job posting, and Signal names every skill the role asks for, which of them the resume evidences, and exactly what each remaining gap costs. The deltas are measured, not estimated — the scorer is re-run with each missing skill injected to get them. A deterministic engine owns the number and a language model can only narrate a result it has no power to change, so the score is reproducible whether or not any model is reachable.
-
-`Next.js 15` `TypeScript` `Tailwind CSS v4` `Groq` `unpdf` `Vitest`
-
-[![Live demo](https://img.shields.io/badge/Live%20demo-6366F1?style=flat-square)](https://signal-resume-match.vercel.app) [![Source](https://img.shields.io/badge/Source-0A0F1D?style=flat-square&logo=github&logoColor=white)](https://github.com/mithinsagar/signal-resume-match)
-
 #### [xai-attack-defense-framework](https://github.com/mithinsagar/xai-attack-defense-framework) · can you make an explanation lie?
 
 An adversarial study of post-hoc explainability: can an attacker leave a security model's *prediction* untouched while corrupting the explanation the analyst reads? Across **235,795 phishing URLs**, an intrusion-detection set and a fraud corpus, four attacks on SHAP, LIME and Integrated Gradients say yes. Of the four defenses that follow, the hybrid one cuts mean explanation drift by **91.1%** while holding classification performance.
