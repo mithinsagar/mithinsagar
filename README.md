@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://mithinsagar.github.io"><img src="https://img.shields.io/badge/Portfolio-0A0F1D?style=flat-square&logo=safari&logoColor=FF5A1F" alt="Portfolio"></a>
   <a href="https://www.linkedin.com/in/mithinsagar"><img src="https://img.shields.io/badge/LinkedIn-0A0F1D?style=flat-square&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"></a>
   <a href="https://huggingface.co/mithinsagar"><img src="https://img.shields.io/badge/Hugging%20Face-0A0F1D?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Hugging Face"></a>
   <a href="mailto:mithinsagar@gmail.com"><img src="https://img.shields.io/badge/Email-0A0F1D?style=flat-square&logo=gmail&logoColor=EA4335" alt="Email"></a>
@@ -11,6 +12,8 @@
 </p>
 
 I build machine learning systems that can explain themselves, and the interfaces that make those explanations useful to someone who isn't an ML engineer.
+
+**Portfolio → [mithinsagar.github.io](https://mithinsagar.github.io)** — the work, the research and the writing, in one place.
 
 Computer Science undergrad at **VIT Chennai** (AI & ML, class of 2027). I spent a summer at the **Indira Gandhi Centre for Atomic Research** replacing a manual industrial weld-inspection workflow with an end-to-end YOLOv8 pipeline, and presented a paper on automated AWS cost and security cleanup at **ICANDIT 2026**.
 
