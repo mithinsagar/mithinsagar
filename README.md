@@ -13,6 +13,8 @@
 
 I build machine learning systems that can explain themselves, and the interfaces that make those explanations useful to someone who isn't an ML engineer.
 
+**Portfolio → [mithinsagar.github.io](https://mithinsagar.github.io)** — the work, the research and the writing, in one place.
+
 Computer Science undergrad at **VIT Chennai** (AI & ML, class of 2027). I spent a summer at the **Indira Gandhi Centre for Atomic Research** replacing a manual industrial weld-inspection workflow with an end-to-end YOLOv8 pipeline, and presented a paper on automated AWS cost and security cleanup at **ICANDIT 2026**.
 
 The through-line, whether it's a research notebook or a game engine: a system nobody can inspect is a system nobody should trust. So everything below ships with the model *and* the dashboard, the metric *and* the interface.
