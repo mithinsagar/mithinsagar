@@ -1,8 +1,9 @@
 name: GitHub-Profile-3D-Contrib
 
 on:
-  schedule:
-    - cron: "0 18 * * *"
+  # Scheduled runs disabled — this was pushing a commit to this repo every
+  # day on its own. Trigger it by hand from the Actions tab when you actually
+  # want an updated graph.
   workflow_dispatch:
 
 jobs:

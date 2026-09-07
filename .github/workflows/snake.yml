@@ -1,8 +1,9 @@
 name: Generate Snake
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  # Scheduled runs disabled — this was pushing to the `output` branch every
+  # day on its own. Trigger it by hand from the Actions tab when you actually
+  # want the snake graphic refreshed.
   workflow_dispatch:
 
 jobs:
